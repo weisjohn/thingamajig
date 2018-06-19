@@ -1,0 +1,35 @@
+{
+  "name": "thingamajig",
+  "version": "0.0.1",
+  "description": "A simple Node.js API for widgets, gadgets, and functions.",
+  "main": "src/server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --require babel-core/register 'test/**/*.spec.js'",
+    "dev": "nodemon . --exec babel-node",
+    "start": "babel-node ."
+  },
+  "author": "John Weis <john.weis@tangramflex.com>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-polyfill": "^6.26.0",
+    "chai-http": "^4.0.0",
+    "chai": "^4.0.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint": "^4.18.2",
+    "lodash": "^4.17.4",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.2",
+    "prettier": "^1.11.1",
+    "prettier-eslint": "^8.8.1",
+    "sinon-chai": "^3.2.0",
+    "sinon": "^6.0.0"
+  }
+}
