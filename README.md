@@ -15,6 +15,10 @@ A simple Node.js API for widgets, gadgets, and functions.
 ### run
 
 ```
+$ npm install
+```
+
+```
 $ npm start
 ```
 
