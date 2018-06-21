@@ -75,7 +75,7 @@ A widget consists of the following:
 
 **example**
 
-```
+```bash
 curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{"name": "sprocket", "parts": ["spoke", "wheel"]}' \
@@ -115,7 +115,7 @@ A gadget consists of the following:
 
 **example**
 
-```
+```bash
 curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{"name": "tailx", "widgets": ["sprocket"], "functions": ["sig", "hash"]}' \
@@ -158,7 +158,7 @@ A function execution record consists of the following:
 | uuid    | string  | universally unique identifier |
 
 
-```
+```bash
 curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{"name": "hash", "gadget": "tailx"}' \
@@ -186,6 +186,6 @@ curl -X POST \
 
 **example**
 
-```
-curl -X GET http://localhost:3000/api/function/e786f9b7-8e78-46ee-9369-f10f4e1e11f0
+```bash
+curl -X GET "http://localhost:3000/api/function/e786f9b7-8e78-46ee-9369-f10f4e1e11f0"
 ```
