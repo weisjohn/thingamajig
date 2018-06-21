@@ -30,11 +30,17 @@ $ npm run dev
 $ npm test
 ```
 
+or to test w/ watch enabled:
+
+```
+$ npm run test:dev
+```
+
 ## doc
 
 ### widgets
 
-Widgets serve as a primitive in this system, and are used as parts of gadgets. A widget is described by a list of optional _parts_.
+Widgets serve as a primitive in this system, and are used as parts of gadgets. A widget is described by a list of _parts_.
 
 A widget consists of the following:
 
@@ -82,6 +88,7 @@ A gadget consists of the following:
 {
   "name": "<string>",
   "widgets": ["<string>"],
+  "functions": ["<string>"],
 }
 ```
 
@@ -91,7 +98,7 @@ A gadget consists of the following:
 
 | field     | type             | description          |
 | --------- | ---------------- | -------------------- |
-| name      | string           | a unique widget name |
+| name      | string           | a unique gadget name |
 | widgets   | array of strings | list of widget names |
 | functions | array of strings | list of functions    |
 
@@ -113,13 +120,15 @@ curl -X POST \
 
 ### functions
 
-Functions are predefined sets of functionality which can be applied to a gadget, provided that gadget references that name. These functions are implemented in `src/func`. Functions may not be submitted through the API, but may be invoked on a gadget.
+Functions are predefined sets of functionality which can be applied to a gadget, provided that gadget references that name. These functions are implemented in `src/func`. Function definitions may not be submitted through the API, but may be invoked on a gadget.
+
+ - the `hash` method should be SHA-256 with a secret of `3ebe57f97092e656c220e2bb94892a7d`.
+ - the `sig` method should use [`sigmund`](http://npm.im/sigmund)
 
 A function execution record consists of the following:
 
 ```json
 {
-  "success": bool,
   "uuid": "<string>",
   "name": "<string>",
   "gadget": "<string>",
